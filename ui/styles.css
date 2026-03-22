@@ -588,7 +588,7 @@ div[data-baseweb="select"] svg {
     padding: 13px 16px;
     border-radius: 10px;
     margin-bottom: 15px;
-    font-size: 13px;
+    font-size: 14px;
     color: #fca5a5;
     font-weight: 500;
 }
@@ -600,7 +600,7 @@ div[data-baseweb="select"] svg {
     padding: 13px 16px;
     border-radius: 10px;
     margin-bottom: 15px;
-    font-size: 13px;
+    font-size: 14px;
     color: #86efac;
     font-weight: 500;
 }
@@ -698,14 +698,14 @@ div[data-baseweb="select"] svg {
 
 /* Emoji icon on the left */
 .insight-item-icon {
-    font-size: 28px;
+    font-size: 32px;
     flex-shrink: 0;
     margin-top: 1px;
 }
 
 /* Card title e.g. "Overtime Impact" */
 .insight-item-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: #e2e8f0;
     margin-bottom: 5px;
@@ -713,7 +713,7 @@ div[data-baseweb="select"] svg {
 
 /* Card body text with stats */
 .insight-item-body {
-    font-size: 14px;
+    font-size: 15px;
     color: #94a3b8;
     line-height: 1.6;
 }
@@ -762,13 +762,13 @@ div[data-baseweb="select"] svg {
 
 /* Emoji icon */
 .hrec-item-icon {
-    font-size: 20px;
+    font-size: 32px;
     flex-shrink: 0;
 }
 
 /* Title e.g. "Reduce Overtime Load" */
 .hrec-item-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: #e2e8f0;
     flex: 1;
@@ -776,7 +776,7 @@ div[data-baseweb="select"] svg {
 
 /* Body description text */
 .hrec-item-body {
-    font-size: 14px;
+    font-size: 15px;
     color: #94a3b8;
     line-height: 1.6;
 }

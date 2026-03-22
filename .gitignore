@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.env.local
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints
+
+# Large files optional
+*.pkl
