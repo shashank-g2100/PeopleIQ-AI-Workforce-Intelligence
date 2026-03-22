@@ -3624,29 +3624,44 @@ if page == "Analytics Dashboard":
         </div>
         """, unsafe_allow_html=True)
 
-        # ── Filters + Dataset Health side by side ──
-        col_left, col_right = st.columns(2)
-
-        with col_left:
-            st.subheader("Filters")
-            dept_filter = st.multiselect(
-                "Department",
-                df_original['Department'].unique(),
-                default=df_original['Department'].unique()
-            )
-
-        filtered_df = df_original[df_original['Department'].isin(dept_filter)]
-
-        with col_right:
-            st.subheader("Dataset Health")
-            h1, h2 = st.columns(2)
-            h1.metric("Missing Values", filtered_df.isnull().sum().sum())
-            h2.metric("Features", filtered_df.shape[1])
+        # ── Dataset Health (standalone, compact) ──
+        st.markdown("""
+        <div class="section-hdr" style="margin-top:10px">
+            <span class="section-hdr-title">Dataset Health</span>
+        </div>
+        """, unsafe_allow_html=True)
+        h1, h2 = st.columns(2)
+        h1.metric("Missing Values", df_original.isnull().sum().sum())
+        h2.metric("Features", df_original.shape[1])
 
         st.divider()
 
-        # ── Charts ────────────────────────────
-        st.subheader("Workforce Insights")
+        # ── Workforce Insights heading + inline Department filter ──
+        ins_col, filt_col = st.columns([1, 1])
+        with ins_col:
+            st.markdown("""
+            <div class="workforce-heading">
+                <div class="workforce-heading-title">Workforce Insights</div>
+                <div class="workforce-heading-sub">Charts filtered by department selection</div>
+            </div>
+            """, unsafe_allow_html=True)
+        with filt_col:
+            st.markdown("""
+            <div style="font-size:10px;font-weight:600;text-transform:uppercase;
+                        letter-spacing:1px;color:#3d4563;margin-bottom:4px;
+                        font-family:'JetBrains Mono',monospace;">
+                Filter by Department
+            </div>
+            """, unsafe_allow_html=True)
+            dept_filter = st.multiselect(
+                "Filter by Department",
+                df_original['Department'].unique(),
+                default=df_original['Department'].unique(),
+                label_visibility="collapsed",
+                placeholder="All departments"
+            )
+
+        filtered_df = df_original[df_original['Department'].isin(dept_filter)]
 
         col1, col2 = st.columns(2)
 

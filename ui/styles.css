@@ -297,7 +297,7 @@ div[data-baseweb="select"] svg {
 /* Label above the number e.g. "MISSING VALUES" */
 [data-testid="stMetricLabel"] p {
     color: #64748b !important;
-    font-size: 11px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
@@ -315,12 +315,12 @@ div[data-baseweb="select"] svg {
    SECTION 6 - FILE UPLOADER  (Analytics Dashboard)
    Controls: upload box background, border, Browse button
    ============================================================ */
-
 [data-testid="stFileUploader"] {
     background: #1e2130 !important;
     border: 2px dashed #3d4563 !important;
     border-radius: 12px !important;
-    padding: 4px !important;
+    padding: 16px 20px !important;   /* ⭐ increase padding */
+    margin: 6px 6px !important;
 }
 [data-testid="stFileUploader"] * {
     color: #94a3b8 !important;
@@ -331,9 +331,9 @@ div[data-baseweb="select"] svg {
     justify-content: space-between !important;
     gap: 16px !important;
 }
-
-/* Browse files button inside uploader */
-[data-testid="stFileUploader"] button {
+ 
+/* Browse files button */
+[data-testid="stFileUploader"] button[kind="secondary"] {
     background: #2d3348 !important;
     color: #e2e8f0 !important;
     border: 1px solid #3d4563 !important;
@@ -343,6 +343,49 @@ div[data-baseweb="select"] svg {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
 }
+ 
+/* Uploaded filename text */
+[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] span,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] [class*="uploadedFileName"],
+[data-testid="stFileUploaderDropzoneInstructions"] ~ div span,
+[data-testid="stFileUploader"] li span {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+}
+ 
+/* Uploaded file row */
+[data-testid="stFileUploader"] li,
+[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+    padding: 4px 8px !important;
+}
+ 
+/* X remove button - small and subtle */
+[data-testid="stFileUploader"] button[title="Remove file"],
+[data-testid="stFileUploader"] button[aria-label="Remove file"] {
+    background: #2d3348 !important;
+    border: 1px solid #3d4563 !important;
+    border-radius: 6px !important;
+    color: #64748b !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    padding: 0 !important;
+    font-size: 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+[data-testid="stFileUploader"] button[title="Remove file"]:hover,
+[data-testid="stFileUploader"] button[aria-label="Remove file"]:hover {
+    background: #3f1515 !important;
+    border-color: #7f1d1d !important;
+    color: #f87171 !important;
+}
+ 
 [data-testid="stFileUploader"]:hover {
     border-color: #4f6ef7 !important;
 }
@@ -394,13 +437,13 @@ div[data-baseweb="select"] svg {
 [data-testid="stHeadingWithActionElements"] h2,
 [data-testid="stHeading"] h2,
 .stApp h2 {
-    font-size: 22px !important;
+    font-size: 26px !important;
     font-weight: 700 !important;
     color: #f1f5f9 !important;
     letter-spacing: -0.3px !important;
 }
 .stApp h3 {
-    font-size: 18px !important;
+    font-size: 24px !important;
     font-weight: 700 !important;
     color: #f1f5f9 !important;
 }
@@ -473,7 +516,7 @@ div[data-baseweb="select"] svg {
 
 /* Small pill below the number e.g. "Loaded" */
 .kpi-badge {
-    font-size: 11px;
+    font-size: 13px;
     padding: 4px 10px;
     border-radius: 20px;
     display: inline-block;
@@ -526,7 +569,7 @@ div[data-baseweb="select"] svg {
 
 /* Right subtitle e.g. "6 findings" */
 .section-hdr-sub {
-    font-size: 13px;
+    font-size: 14px;
     color: #64748b;
 }
 
@@ -582,7 +625,7 @@ div[data-baseweb="select"] svg {
 
 /* "Workforce Analytics Dashboard" title */
 .topbar h1 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 700;
     color: #f1f5f9 !important;
     margin: 0 0 3px;
@@ -591,7 +634,7 @@ div[data-baseweb="select"] svg {
 
 /* Subtitle below title */
 .topbar p {
-    font-size: 12px;
+    font-size: 14px;
     color: #64748b;
     margin: 0;
     font-family: 'JetBrains Mono', monospace;
@@ -654,14 +697,14 @@ div[data-baseweb="select"] svg {
 
 /* Emoji icon on the left */
 .insight-item-icon {
-    font-size: 26px;
+    font-size: 28px;
     flex-shrink: 0;
     margin-top: 1px;
 }
 
 /* Card title e.g. "Overtime Impact" */
 .insight-item-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: #e2e8f0;
     margin-bottom: 5px;
@@ -669,7 +712,7 @@ div[data-baseweb="select"] svg {
 
 /* Card body text with stats */
 .insight-item-body {
-    font-size: 13.5px;
+    font-size: 14px;
     color: #94a3b8;
     line-height: 1.6;
 }
@@ -724,7 +767,7 @@ div[data-baseweb="select"] svg {
 
 /* Title e.g. "Reduce Overtime Load" */
 .hrec-item-title {
-    font-size: 14.5px;
+    font-size: 16px;
     font-weight: 700;
     color: #e2e8f0;
     flex: 1;
@@ -732,7 +775,7 @@ div[data-baseweb="select"] svg {
 
 /* Body description text */
 .hrec-item-body {
-    font-size: 13.5px;
+    font-size: 14px;
     color: #94a3b8;
     line-height: 1.6;
 }
@@ -743,7 +786,7 @@ div[data-baseweb="select"] svg {
 
 /* HIGH / MEDIUM / LOW pill - colors applied inline from Python */
 .hrec-priority-pill {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .7px;
@@ -909,4 +952,42 @@ div[data-baseweb="select"] svg {
     font-size: 15px;             /* ⭐ bigger title */
     display: block;
     margin-bottom: 6px;
+}
+
+/* ============================================================
+   SECTION 18 - INLINE CHART FILTER BAR
+   Controls: the Department multiselect beside Workforce Insights
+   ============================================================ */
+ 
+/* X on chip */
+[data-testid="stMultiSelect"] [data-baseweb="tag"] span[role="presentation"] {
+    color: #64748b !important;
+    font-size: 16px !important;
+    margin-left: 4px !important;
+}
+[data-testid="stMultiSelect"] [data-baseweb="tag"] span[role="presentation"]:hover {
+    color: #f87171 !important;
+}
+ 
+/* Workforce Insights heading block */
+.workforce-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2px;
+}
+.workforce-heading-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin: 0;
+}
+.workforce-heading-sub {
+    font-size: 13px;
+    color: #3d4563;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.2px;
 }
