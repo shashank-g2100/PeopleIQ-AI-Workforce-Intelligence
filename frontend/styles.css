@@ -1,0 +1,994 @@
+/* ============================================================
+   HR ATTRITION ANALYTICS - DARK THEME STYLESHEET
+   ============================================================
+   HOW TO USE:
+   Both files (app.py + styles.css) must be in the same folder.
+   Find the section you want to edit below, change the values,
+   save the file, then refresh your Streamlit app.
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1 - BASE / GLOBAL
+   Controls: font, dark mode, page background, text colors
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+html, body, [class*="css"] {
+    color-scheme: dark !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.stApp {
+    background: #0f1117 !important;
+    color: #e2e8f0 !important;
+}
+
+.block-container {
+    padding: 1.5rem 2rem 4rem 2rem !important;
+    max-width: 100% !important;
+}
+
+/* Page headings h1, h2, h3 */
+h1, h2, h3,
+.stApp h1, .stApp h2, .stApp h3,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+    color: #f1f5f9 !important;
+}
+
+/* Body paragraph text */
+.stApp p,
+[data-testid="stMarkdownContainer"] p {
+    color: #94a3b8 !important;
+}
+
+/* Caption text */
+.stCaption,
+[data-testid="stCaptionContainer"] p {
+    color: #64748b !important;
+    font-size: 16px !important;
+}
+
+/* Divider line */
+hr {
+    border: none !important;
+    border-top: 1px solid #2d3348 !important;
+}
+
+/* Hide Streamlit default footer and top menu */
+footer    { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+
+
+/* ============================================================
+   SECTION 2 - SIDEBAR
+   Controls: sidebar background, nav links, title,
+             Model Active box, Algorithm info box
+   ============================================================ */
+
+[data-testid="stSidebar"] {
+    background: #1e2130 !important;
+    border-right: 1px solid #2d3348 !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: #cbd5e1 !important;
+}
+
+/* Sidebar title text */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #f1f5f9 !important;
+    font-weight: 700 !important;
+}
+
+/* Navigation radio button labels */
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
+    color: #94a3b8 !important;
+    padding: 6px 10px !important;
+    border-radius: 7px !important;
+    font-size: 13px !important;
+}
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:hover {
+    background: #2d3348 !important;
+}
+
+/* Model Active success box + Algorithm info box */
+[data-testid="stSidebar"] [data-testid="stAlert"] {
+    background: #1e3a5f !important;
+    border-color: #3b82f6 !important;
+    color: #93c5fd !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+[data-testid="stSidebar"] [data-testid="stAlert"] p {
+    color: #e2e8f0 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+[data-testid="stSidebar"] [data-testid="stAlert"][data-baseweb="notification"] {
+    color: #6ee7b7 !important;
+}
+
+
+/* ============================================================
+   SECTION 3 - FORM INPUTS (Prediction Page)
+   Controls: slider, selectbox, number input, multi-select
+   ============================================================ */
+
+/* Labels above every input */
+.stSlider label p,
+.stSelectbox label p,
+.stNumberInput label p,
+.stMultiSelect label p {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.7px !important;
+    color: #64748b !important;
+}
+
+/* Selectbox outer box */
+div[data-baseweb="select"] > div {
+    background-color: #1e2130 !important;
+    border: 1.5px solid #2d3348 !important;
+    border-radius: 9px !important;
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
+    font-family: 'Inter', sans-serif !important;
+    min-height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;   /* ⭐ THIS FIXES VERTICAL ALIGNMENT */
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+div[data-baseweb="select"] > div:hover {
+    border-color: #4f6ef7 !important;
+}
+div[data-baseweb="select"] > div:focus-within {
+    border-color: #4f6ef7 !important;
+    box-shadow: 0 0 0 3px rgba(79,110,247,0.18) !important;
+}
+
+/* Selected value text inside selectbox */
+div[data-baseweb="select"] span {
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Dropdown arrow icon */
+div[data-baseweb="select"] svg {
+    fill: #64748b !important;
+}
+
+/* Dropdown list popup */
+[data-baseweb="popover"] [data-baseweb="menu"] {
+    background: #1e2130 !important;
+    border: 1px solid #2d3348 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.40) !important;
+}
+[data-baseweb="popover"] li {
+    font-size: 13px !important;
+    color: #e2e8f0 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+[data-baseweb="popover"] li:hover {
+    background: #2d3348 !important;
+}
+[data-baseweb="popover"] li[aria-selected="true"] {
+    background: #1e3a6e !important;
+    color: #7c9ef5 !important;
+    font-weight: 600 !important;
+}
+
+/* Number input field */
+.stNumberInput input {
+    background: #1e2130 !important;
+    border: 1.5px solid #2d3348 !important;
+    border-radius: 9px !important;
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    font-family: 'Inter', sans-serif !important;
+    height: 42px !important;
+}
+.stNumberInput input:focus {
+    border-color: #4f6ef7 !important;
+    box-shadow: 0 0 0 3px rgba(79,110,247,0.18) !important;
+    outline: none !important;
+}
+
+/* +/- buttons on number input */
+.stNumberInput button {
+    background: #2d3348 !important;
+    border: 1px solid #3d4563 !important;
+    color: #94a3b8 !important;
+    border-radius: 7px !important;
+}
+.stNumberInput button:hover {
+    background: #3d4563 !important;
+}
+
+/* Multi-select tags e.g. Department filter chips */
+[data-baseweb="tag"] {
+    background: #1e3a6e !important;
+    color: #7c9ef5 !important;
+}
+
+/* Slider thumb dot */
+[data-testid="stSlider"] [role="slider"] {
+    background: #4f6ef7 !important;
+    border-color: #4f6ef7 !important;
+}
+[data-testid="stSlider"] [data-testid="stTickBarMin"],
+[data-testid="stSlider"] [data-testid="stTickBarMax"] {
+    color: #64748b !important;
+}
+
+/* st.container(border=True) wrapper box */
+[data-testid="stVerticalBlockBorderWrapper"] > div {
+    background: #1e2130 !important;
+    border: 1px solid #2d3348 !important;
+    border-radius: 14px !important;
+    padding: 20px !important;
+}
+
+
+/* ============================================================
+   SECTION 4 - BUTTONS
+   Controls: "Run Risk Assessment" primary button,
+             "Download Predictions" secondary button
+   ============================================================ */
+
+/* Primary button - Run Risk Assessment */
+.stButton > button {
+    background: linear-gradient(135deg, #4f6ef7 0%, #3a56d4 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 12px 28px !important;
+    font-family: 'Inter', sans-serif !important;
+    box-shadow: 0 4px 14px rgba(79,110,247,0.30) !important;
+    transition: all .2s !important;
+    height: auto !important;
+}
+.stButton > button:hover {
+    opacity: 0.90 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(79,110,247,0.45) !important;
+}
+
+/* Download button */
+.stDownloadButton > button {
+    background: transparent !important;
+    color: #7c9ef5 !important;
+    border: 1.5px solid #4f6ef7 !important;
+    border-radius: 9px !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+}
+.stDownloadButton > button:hover {
+    background: #1e3a6e !important;
+}
+
+
+/* ============================================================
+   SECTION 5 - METRICS  (Dataset Health: Missing Values, Features)
+   Controls: metric card background, label size, value size
+   ============================================================ */
+
+[data-testid="stMetric"] {
+    background: #1e2130 !important;
+    border: 1px solid #2d3348 !important;
+    border-radius: 12px !important;
+    padding: 16px 18px !important;
+}
+
+/* Label above the number e.g. "MISSING VALUES" */
+[data-testid="stMetricLabel"] p {
+    color: #64748b !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* The large number itself */
+[data-testid="stMetricValue"] {
+    color: #f1f5f9 !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+}
+
+
+/* ============================================================
+   SECTION 6 - FILE UPLOADER  (Analytics Dashboard)
+   Controls: upload box background, border, Browse button
+   ============================================================ */
+[data-testid="stFileUploader"] {
+    background: #1e2130 !important;
+    border: 2px dashed #3d4563 !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;   /* ⭐ increase padding */
+    margin: 6px 6px !important;
+}
+[data-testid="stFileUploader"] * {
+    color: #94a3b8 !important;
+}
+[data-testid="stFileUploader"] section {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+}
+ 
+/* Browse files button */
+[data-testid="stFileUploader"] button[kind="secondary"] {
+    background: #2d3348 !important;
+    color: #e2e8f0 !important;
+    border: 1px solid #3d4563 !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+ 
+/* Uploaded filename text */
+[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] span,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] [class*="uploadedFileName"],
+[data-testid="stFileUploaderDropzoneInstructions"] ~ div span,
+[data-testid="stFileUploader"] li span {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+}
+ 
+/* Uploaded file row */
+[data-testid="stFileUploader"] li,
+[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] {
+    font-size: 14px !important;
+    color: #94a3b8 !important;
+    padding: 4px 8px !important;
+}
+ 
+/* X remove button - small and subtle */
+[data-testid="stFileUploader"] button[title="Remove file"],
+[data-testid="stFileUploader"] button[aria-label="Remove file"] {
+    background: #2d3348 !important;
+    border: 1px solid #3d4563 !important;
+    border-radius: 6px !important;
+    color: #64748b !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    padding: 0 !important;
+    font-size: 11px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+[data-testid="stFileUploader"] button[title="Remove file"]:hover,
+[data-testid="stFileUploader"] button[aria-label="Remove file"]:hover {
+    background: #3f1515 !important;
+    border-color: #7f1d1d !important;
+    color: #f87171 !important;
+}
+ 
+[data-testid="stFileUploader"]:hover {
+    border-color: #4f6ef7 !important;
+}
+
+
+/* ============================================================
+   SECTION 7 - EXPANDER  (View Full Prediction Data)
+   Controls: expander header background, text, border
+   ============================================================ */
+
+.streamlit-expanderHeader {
+    background: #1e2130 !important;
+    border: 1px solid #2d3348 !important;
+    border-radius: 10px !important;
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+.streamlit-expanderContent {
+    background: #1e2130 !important;
+    border: 1px solid #2d3348 !important;
+}
+
+
+/* ============================================================
+   SECTION 8 - DATAFRAME TABLE  (High Risk Employees, Full Data)
+   Controls: table background, border, border-radius
+   ============================================================ */
+
+[data-testid="stDataFrame"] {
+    background: #1e2130 !important;
+    border-radius: 12px !important;
+    border: 1px solid #2d3348 !important;
+    overflow: hidden !important;
+}
+
+
+/* ============================================================
+   SECTION 9 - SUBHEADINGS  (all st.subheader() calls)
+   Controls: font size, weight, color for section titles like
+             "Filters", "Dataset Health", "Workforce Insights"
+   ============================================================ */
+
+[data-testid="stHeading"],
+[data-testid="stHeadingWithActionElements"],
+.stSubheader {
+    color: #f1f5f9 !important;
+}
+[data-testid="stHeadingWithActionElements"] h2,
+[data-testid="stHeading"] h2,
+.stApp h2 {
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    letter-spacing: -0.3px !important;
+}
+.stApp h3 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+}
+
+/* Loading spinner */
+.stSpinner > div {
+    border-top-color: #4f6ef7 !important;
+}
+
+
+/* ============================================================
+   SECTION 10 - KPI CARDS
+   Controls: Total Employees, Attrition Count, Attrition Rate,
+             Avg Monthly Income cards
+   To change a card color edit the .kpi-card.info / .danger /
+   .warn / .success blocks below
+   ============================================================ */
+
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.kpi-card {
+    background: #1e2130;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #2d3348;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Decorative circle in top-right corner */
+.kpi-card::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    opacity: 0.10;
+}
+
+/* Label text e.g. "TOTAL EMPLOYEES" */
+.kpi-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* Large number e.g. "1,470" */
+.kpi-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Small pill below the number e.g. "Loaded" */
+.kpi-badge {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* INFO card - Total Employees - blue */
+.kpi-card.info .kpi-value  { color: #7c9ef5; }
+.kpi-card.info .kpi-badge  { background: #1e3a6e; color: #7c9ef5; }
+.kpi-card.info::after      { background: #4f6ef7; }
+
+/* DANGER card - Attrition Count - red */
+.kpi-card.danger .kpi-value { color: #f87171; }
+.kpi-card.danger .kpi-badge { background: #3f1515; color: #f87171; }
+.kpi-card.danger::after     { background: #dc2626; }
+
+/* WARN card - Attrition Rate - amber */
+.kpi-card.warn .kpi-value  { color: #fbbf24; }
+.kpi-card.warn .kpi-badge  { background: #3d2b08; color: #fbbf24; }
+.kpi-card.warn::after      { background: #d97706; }
+
+/* SUCCESS card - Avg Monthly Income - green */
+.kpi-card.success .kpi-value { color: #34d399; }
+.kpi-card.success .kpi-badge { background: #0d3321; color: #34d399; }
+.kpi-card.success::after     { background: #059669; }
+
+
+/* ============================================================
+   SECTION 11 - SECTION HEADERS  (.section-hdr)
+   Controls: "Key Insights" and "HR Recommendations" title rows
+             font size, divider line, spacing
+   ============================================================ */
+
+.section-hdr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #2d3348;
+    padding-bottom: 8px;
+}
+
+/* Left title e.g. "Key Insights" */
+.section-hdr-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #f1f5f9;
+}
+
+/* Right subtitle e.g. "6 findings" */
+.section-hdr-sub {
+    font-size: 14px;
+    color: #64748b;
+}
+
+
+/* ============================================================
+   SECTION 12 - ALERT BANNERS
+   Controls: "High Attrition Risk" red banner,
+             "Workforce Stable" green banner
+   ============================================================ */
+
+.alert-danger {
+    background: #2a1215;
+    border: 1px solid #7f1d1d;
+    border-left: 5px solid #dc2626;
+    padding: 13px 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #fca5a5;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #0d2818;
+    border: 1px solid #14532d;
+    border-left: 5px solid #16a34a;
+    padding: 13px 16px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #86efac;
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   SECTION 13 - TOPBAR  (Analytics Dashboard header bar)
+   Controls: bar background, title text, subtitle,
+             green "Ready" badge
+   ============================================================ */
+
+.topbar {
+    background: #1e2130;
+    border: 1px solid #2d3348;
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* "Workforce Analytics Dashboard" title */
+.topbar h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f1f5f9 !important;
+    margin: 0 0 3px;
+    letter-spacing: -0.4px;
+}
+
+/* Subtitle below title */
+.topbar p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Green "Ready" badge top-right */
+.badge-active {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #0d2818;
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #166534;
+    white-space: nowrap;
+}
+
+/* The green dot inside the badge */
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 3px rgba(52,211,153,0.2);
+    display: inline-block;
+}
+
+
+/* ============================================================
+   SECTION 14 - KEY INSIGHTS CARDS
+   Controls: 2-column insight grid layout, card background,
+             icon size, title size, body text, hover effect
+   ============================================================ */
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.insight-item {
+    background: #1e2130;
+    border: 1px solid #2d3348;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.20);
+    transition: border-color .15s, box-shadow .15s;
+}
+.insight-item:hover {
+    border-color: #4f6ef7;
+    box-shadow: 0 3px 12px rgba(79,110,247,0.15);
+}
+
+/* Emoji icon on the left */
+.insight-item-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Card title e.g. "Overtime Impact" */
+.insight-item-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 5px;
+}
+
+/* Card body text with stats */
+.insight-item-body {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Bold numbers inside body text */
+.insight-item-body strong {
+    color: #7c9ef5;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   SECTION 15 - HR RECOMMENDATION CARDS
+   Controls: 2-column recommendation grid, card background,
+             icon size, title, body text,
+             HIGH / MEDIUM / LOW priority pill
+   ============================================================ */
+
+.hrec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.hrec-item {
+    background: #1e2130;
+    border: 1px solid #2d3348;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.20);
+    transition: border-color .15s, box-shadow .15s;
+}
+.hrec-item:hover {
+    border-color: #166534;
+    box-shadow: 0 3px 12px rgba(52,211,153,0.10);
+}
+
+/* Top row: icon + title + priority pill */
+.hrec-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+/* Emoji icon */
+.hrec-item-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+/* Title e.g. "Reduce Overtime Load" */
+.hrec-item-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e2e8f0;
+    flex: 1;
+}
+
+/* Body description text */
+.hrec-item-body {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+.hrec-item-body strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* HIGH / MEDIUM / LOW pill - colors applied inline from Python */
+.hrec-priority-pill {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   SECTION 16 - PREDICTION RESULT CARDS  (Prediction Page)
+   Controls: high-risk card red border, low-risk card green border,
+             big probability number, risk label, heading,
+             description text, LOW RISK / HIGH RISK pill
+   ============================================================ */
+
+/* High risk card - red left border */
+.result-card-high {
+    background: #1e2130;
+    border: 1.5px solid #7f1d1d;
+    border-left: 5px solid #dc2626;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(220,38,38,0.12);
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Low risk card - green left border */
+.result-card-low {
+    background: #1e2130;
+    border: 1.5px solid #166534;
+    border-left: 5px solid #16a34a;
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(22,163,74,0.12);
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Large probability number e.g. "0.246" */
+.result-prob {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+.result-prob.high { color: #f87171; }
+.result-prob.low  { color: #34d399; }
+
+/* "RISK PROBABILITY" small label above the number */
+.result-label {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    font-weight: 600;
+}
+
+/* Heading e.g. "Low Attrition Risk" */
+.result-heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 6px;
+}
+
+/* Description paragraph */
+.result-sub {
+    font-size: 16px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* "Prediction: / Risk Level:" meta row */
+.result-meta {
+    font-size: 16px;
+    color: #64748b;
+}
+.result-meta strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* LOW RISK / HIGH RISK / MEDIUM pill */
+.risk-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+.risk-pill.high { background: #3f1515; color: #f87171; }
+.risk-pill.med  { background: #3d2b08; color: #fbbf24; }
+.risk-pill.low  { background: #0d3321; color: #34d399; }
+
+
+/* ============================================================
+   SECTION 17 - RECOMMENDATION PANEL  (Prediction Page col 3)
+   Controls: right-side panel background, "HR RECOMMENDATIONS"
+             label, grid of individual recommendation cards
+   ============================================================ */
+
+/* Outer panel wrapper */
+.rec-panel {
+    background: #1e2130;
+    border: 1px solid #2d3348;
+    border-radius: 14px;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+}
+
+/* HR RECOMMENDATIONS label */
+.rec-panel-label {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+/* Recommendation grid */
+.rec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Individual recommendation card */
+.rec-item {
+    background: #252b3b;
+    border: 1px solid #2d3348;
+    border-radius: 12px;
+
+    padding: 18px 20px;          /* ⭐ bigger padding */
+    font-size: 14px;             /* ⭐ bigger text */
+    color: #cbd5f5;
+    line-height: 1.6;
+
+    min-height: 95px;            /* ⭐ match other cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title inside card */
+.rec-item strong {
+    color: #f1f5f9;
+    font-weight: 600;
+    font-size: 15px;             /* ⭐ bigger title */
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* ============================================================
+   SECTION 18 - INLINE CHART FILTER BAR
+   Controls: the Department multiselect beside Workforce Insights
+   ============================================================ */
+ 
+/* X on chip */
+[data-testid="stMultiSelect"] [data-baseweb="tag"] span[role="presentation"] {
+    color: #64748b !important;
+    font-size: 20px !important;
+    margin-left: 4px !important;
+}
+[data-testid="stMultiSelect"] [data-baseweb="tag"] span[role="presentation"]:hover {
+    color: #f87171 !important;
+}
+ 
+/* Workforce Insights heading block */
+.workforce-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2px;
+}
+.workforce-heading-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin: 0;
+}
+.workforce-heading-sub {
+    font-size: 13px;
+    color: #3d4563;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.2px;
+}
