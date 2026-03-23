@@ -16,11 +16,11 @@ PeopleIQ is an end-to-end AI workforce analytics platform designed to help HR te
 
 The system combines:
 
-• Machine Learning prediction  
-• AI generated insights  
-• Backend API deployment  
-• Interactive dashboards  
-• Business intelligence analytics  
+* Machine Learning prediction  
+* AI generated insights  
+* Backend API deployment  
+* Interactive dashboards  
+* Business intelligence analytics  
 
 ---
 
@@ -28,39 +28,39 @@ The system combines:
 
 ### 🤖 Machine Learning Prediction
 
-• Predict employee attrition risk  
-• Logistic Regression model  
-• ROC curve evaluation  
-• Confusion matrix analysis  
-• Risk probability scoring  
+* Predict employee attrition risk  
+* Logistic Regression model  
+* ROC curve evaluation  
+* Confusion matrix analysis  
+* Risk probability scoring  
 
 ---
 
 ### 🧠 AI Workforce Intelligence
 
-• AI generated HR insights  
-• Automated HR recommendations  
-• Business impact analysis  
-• Data driven strategy suggestions  
+* AI generated HR insights  
+* Automated HR recommendations  
+* Business impact analysis  
+* Data driven strategy suggestions  
 
 ---
 
 ### 📊 HR Analytics Dashboard
 
-• Interactive workforce dashboard  
-• Department attrition analysis  
-• Salary vs attrition insights  
-• Risk distribution charts  
-• High risk employee identification  
+* Interactive workforce dashboard  
+* Department attrition analysis  
+* Salary vs attrition insights  
+* Risk distribution charts  
+* High risk employee identification  
 
 ---
 
 ### ⚙️ Production Style System
 
-• FastAPI backend deployment  
-• Streamlit enterprise dashboard  
-• Modular architecture  
-• Scalable ML pipeline  
+* FastAPI backend deployment  
+* Streamlit enterprise dashboard  
+* Modular architecture  
+* Scalable ML pipeline  
 
 ---
 
@@ -182,7 +182,8 @@ PeopleIQ can help organizations:
 
 ### Workforce Analytics Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard view 1](screenshots/dashboard1.png)
+![Dashboard view 2](screenshots/dashboard2.png)
 
 ### AI Workforce Intelligence
 
