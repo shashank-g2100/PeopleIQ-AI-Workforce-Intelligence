@@ -1,55 +1,70 @@
-# PeopleIQ – AI Workforce Intelligence Platform
+# 🧠 PeopleIQ – AI Workforce Intelligence Platform
 
-AI-powered HR analytics platform for predicting employee attrition and generating workforce insights using Machine Learning and Large Language Models.
+AI-powered HR analytics platform for predicting employee attrition and generating workforce insights using **Machine Learning + AI**.
+
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![ML](https://img.shields.io/badge/MachineLearning-ScikitLearn-orange)
+![AI](https://img.shields.io/badge/AI-LLM-green)
+![FastAPI](https://img.shields.io/badge/API-FastAPI-teal)
+![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
 
 ---
 
-## Project Overview
+## 🚀 Project Overview
 
 PeopleIQ is an end-to-end AI workforce analytics platform designed to help HR teams proactively identify employee attrition risks and make data-driven retention decisions.
 
-The system combines Machine Learning prediction models, an AI insights engine, and an interactive analytics dashboard to transform raw HR data into actionable workforce intelligence.
+The system combines:
 
-This project demonstrates the integration of:
-
-* Machine Learning prediction systems  
-* AI powered insights generation  
-* Backend API deployment  
-* Interactive analytics dashboards  
-* Business decision intelligence  
+• Machine Learning prediction  
+• AI generated insights  
+• Backend API deployment  
+• Interactive dashboards  
+• Business intelligence analytics  
 
 ---
 
-## Key Features
+## ⭐ Key Features
 
-### Machine Learning Prediction
-* Predict employee attrition risk using Logistic Regression  
-* Feature engineered HR dataset  
-* Model evaluation using ROC curves and confusion matrices  
-* Risk probability scoring
+### 🤖 Machine Learning Prediction
 
-### AI Workforce Intelligence
-* AI generated HR insights from workforce data
-* Automated HR recommendations
-* Business impact summaries
-* Dataset driven strategy suggestions
-
-### HR Analytics Dashboard
-* Interactive workforce analytics dashboard
-* Department wise attrition analysis
-* Salary vs attrition insights
-* Risk distribution visualization
-* High risk employee identification
-
-### Production Style System
-* FastAPI backend model deployment
-* Streamlit frontend dashboard
-* Modular project architecture
-* Scalable ML pipeline structure
+• Predict employee attrition risk  
+• Logistic Regression model  
+• ROC curve evaluation  
+• Confusion matrix analysis  
+• Risk probability scoring  
 
 ---
 
-## Tech Stack
+### 🧠 AI Workforce Intelligence
+
+• AI generated HR insights  
+• Automated HR recommendations  
+• Business impact analysis  
+• Data driven strategy suggestions  
+
+---
+
+### 📊 HR Analytics Dashboard
+
+• Interactive workforce dashboard  
+• Department attrition analysis  
+• Salary vs attrition insights  
+• Risk distribution charts  
+• High risk employee identification  
+
+---
+
+### ⚙️ Production Style System
+
+• FastAPI backend deployment  
+• Streamlit enterprise dashboard  
+• Modular architecture  
+• Scalable ML pipeline  
+
+---
+
+## 🛠 Tech Stack
 
 ### Machine Learning
 Scikit-learn  
@@ -64,17 +79,18 @@ Python
 Streamlit  
 Plotly  
 
-### AI Integration
-LLM powered insights engine  
+### AI
+LLM HR Insights Engine  
 
 ### Tools
 Git  
 GitHub  
-Jupyter Notebook  
+Jupyter  
 
 ---
 
-## System Architecture
+## 🏗 System Architecture
+
 The PeopleIQ platform follows a modular AI architecture that transforms raw HR data into actionable workforce intelligence through Machine Learning prediction and AI insight generation.
 
 ### Architecture Flow
@@ -106,7 +122,7 @@ HR Decision Support System
 
 ---
 
-## Model Performance Comparison
+## 📈 Model Performance
 
 | Model | Accuracy | Key Observation |
 |------|---------|----------------|
@@ -119,7 +135,7 @@ Final model selected:
 
 ---
 
-## Business Problem Addressed
+## 🎯 Business Problem
 
 Employee attrition causes:
 
@@ -139,7 +155,7 @@ Companies need proactive systems to detect attrition risk early.
 
 ---
 
-## Business Impact
+## 💼 Business Impact
 
 PeopleIQ can help organizations:
 
@@ -158,7 +174,7 @@ PeopleIQ can help organizations:
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
 ### Employee Risk Prediction Module
 
@@ -174,7 +190,7 @@ PeopleIQ can help organizations:
 
 ---
 
-## Installation Guide
+## ⚡ Installation
 
 ### Clone Repository
 
@@ -196,7 +212,7 @@ pip install -r requirements.txt
 
 ---
 
-## Running the Application
+## ▶ Running Application
 
 ### Run Backend API
 
@@ -215,7 +231,7 @@ http://127.0.0.1:8000
 ### Run Frontend Dashboard
 
 ```bash
-streamlit run app.py
+streamlit run frontend/app.py
 ```
 
 Dashboard will be available at:
@@ -226,7 +242,7 @@ http://localhost:8501
 
 ---
 
-## API Example
+## 🔌 API Example
 
 ### POST Request
 
@@ -257,29 +273,29 @@ Risk Level: High
 
 ---
 
-## Key Insights Generated
+## 🔍 Key Insights Generated
 
 Example insights produced:
 
-• Overtime employees show higher attrition probability  
-• Low salary band employees show higher risk  
-• Early tenure employees have elevated exit probability  
-• Low satisfaction employees require engagement actions  
+* Overtime employees show higher attrition probability  
+* Low salary band employees show higher risk  
+* Early tenure employees have elevated exit probability  
+* Low satisfaction employees require engagement actions  
 
 ---
 
-## HR Recommendations Generated
+## 🏢 HR Recommendations
 
 Example recommendations:
 
-• Reduce overtime workload
-• Conduct satisfaction reviews
-• Improve compensation policies
-• Strengthen onboarding programs
+* Reduce overtime workload
+* Conduct satisfaction reviews
+* Improve compensation policies
+* Strengthen onboarding programs
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text id="h6o0il"
 PeopleIQ-AI-Workforce-Intelligence/
@@ -311,7 +327,7 @@ PeopleIQ-AI-Workforce-Intelligence/
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 Planned enhancements:
 
@@ -325,7 +341,7 @@ Planned enhancements:
 
 ---
 
-## Learning Outcomes
+## 🎓 Learning Outcomes
 
 Through this project I gained experience in:
 
@@ -339,23 +355,15 @@ Through this project I gained experience in:
 
 ---
 
-## Author
+## 👨‍💻 Author
 
 **Shashank**
 
 ---
 
-## License
+## 📜 License
 
 MIT License
-
----
-
-## Project Status
-
-Production ready portfolio project.
-
-Actively improving with AI capabilities.
 
 ---
 
@@ -365,7 +373,7 @@ HR Analytics dataset inspiration from IBM HR Analytics dataset.
 
 ---
 
-## Contact
+## 🤝 Contact
 
 For collaboration or questions:
 
