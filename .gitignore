@@ -7,6 +7,3 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints
-
-# Large files optional
-*.pkl
