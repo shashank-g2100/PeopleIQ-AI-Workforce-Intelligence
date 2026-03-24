@@ -879,7 +879,7 @@ if page == "Analytics Dashboard":
         st.divider()
 
         # Workforce Insights heading + department filter
-        ins_col, filt_col = st.columns([2, 1])
+        ins_col, filt_col = st.columns([1, 1])
         with ins_col:
             st.markdown("""
             <div class="workforce-heading">
