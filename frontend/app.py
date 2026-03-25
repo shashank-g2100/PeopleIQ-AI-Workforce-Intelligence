@@ -636,7 +636,8 @@ if page == "Prediction":
             try:
                 resp = requests.post(
                     "https://peopleiq-ai-workforce-intelligence.onrender.com/predict",
-                    json=payload
+                    json=payload,
+                    timeout=30
                 )
 
                 result     = resp.json()

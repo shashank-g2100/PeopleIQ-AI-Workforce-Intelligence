@@ -23,12 +23,7 @@ def generate_hr_insights(df: pd.DataFrame) -> dict:
     """
     try:
         # Client created INSIDE try — if key missing it falls back, never crashes
-        api_key = os.getenv("GROQ_API_KEY")
-
-        if not api_key:
-            raise Exception("Missing GROQ API KEY")
-
-        client = Groq(api_key=api_key)
+        client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
         # ── Build stats from dataframe ──────────────────────────
         rate     = (df['Prediction'] == "Attrition").mean() * 100
@@ -173,9 +168,6 @@ STRICT RULES:
         return result
 
     except Exception as e:
-
-        print("AI ERROR:",str(e))
-
         return {
             "insights": [],
             "recommendations": [],
