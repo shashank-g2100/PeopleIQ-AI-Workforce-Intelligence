@@ -51,9 +51,17 @@ app = FastAPI(
 # Load trained model
 # ==============================
 
-model = joblib.load("models/attrition_model.pkl")
-scaler = joblib.load("models/scaler.pkl")
-columns = joblib.load("models/model_columns.pkl")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_DIR = os.path.join(BASE_DIR,"models")
+
+model = joblib.load(os.path.join(MODEL_DIR,"attrition_model.pkl"))
+
+scaler = joblib.load(os.path.join(MODEL_DIR,"scaler.pkl"))
+
+columns = joblib.load(os.path.join(MODEL_DIR,"model_columns.pkl"))
 
 # ==============================
 # Input schema
